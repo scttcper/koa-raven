@@ -19,7 +19,7 @@ Install raven ^1 and koa2-raven
 
 ```javascript
 const Koa = require('koa');
-const raven = require('raven');
+const Raven = require('raven');
 const koaRaven = require('koa2-raven');
 
 const client = app.context.raven = Raven
