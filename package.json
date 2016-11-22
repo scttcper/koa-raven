@@ -1,7 +1,7 @@
 {
   "name": "koa2-raven",
   "description": "raven middleware for koa 2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
@@ -16,9 +16,11 @@
     "middleware",
     "error"
   ],
+  "dependencies": {
+    "raven": "^1.0.0-beta.1"
+  },
   "peerDependencies": {
-    "koa": "^2.0.0-alpha.7",
-    "raven": "^1.0.0-beta.0"
+    "koa": "^2.0.0-alpha.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",
