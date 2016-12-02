@@ -39,6 +39,16 @@
     "raven": "^1.0.0-beta.1",
     "supertest": "^2.0.1"
   },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "exclude": [
+      "examples",
+      "test"
+    ]
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
