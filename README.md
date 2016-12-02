@@ -7,7 +7,7 @@
 [travis-image]: https://travis-ci.org/scttcper/koa2-raven.svg
 [travis-url]: https://travis-ci.org/scttcper/koa2-raven
 
-[raven-node](https://github.com/getsentry/raven-node) middleware for [koa](https://github.com/koajs/koa) v2. Records errors that are thrown from your other middleware
+[raven-node](https://github.com/getsentry/raven-node) middleware for [koa](https://github.com/koajs/koa) v2. Records errors that are thrown from your other middleware and ignores errors that are thrown using `ctx.throw`.
 
 
 ### Install
