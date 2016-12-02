@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
+    "coverage": "nyc npm test",
     "lint": "eslint index.js test examples; exit 0"
   },
   "keywords": [
     "raven",
-    "raven-node",
     "sentry",
     "koa",
-    "koa2",
     "middleware",
+    "catch",
+    "exception",
     "error"
   ],
   "dependencies": {
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.15",
     "eslint": "^3.11.1",
     "eslint-config-airbnb-base": "^10.0.1",
     "eslint-plugin-import": "^2.2.0",
