@@ -10,7 +10,7 @@ const client = app.context.raven;
 
 lint(['index.js', 'test', 'examples'], { timeout: 10000 });
 
-describe('koa2-swagger-ui', function() {
+describe('koa2-raven', function() {
   it('should respond 200', function(done) {
     request(app.listen())
       .get('/')
@@ -34,6 +34,22 @@ describe('koa2-swagger-ui', function() {
       .expect(500, 'Internal Server Error')
       .end((err) => {
         if (err) throw new Error(err);
+      });
+  });
+  it('should not capture 400 bad request', function(done) {
+    const scope = nock('https://app.getsentry.com:443')
+      .filteringRequestBody(/.*/, '*')
+      .post('/api/269/store/', '*')
+      .reply(200, 'OK');
+    request(app.listen())
+      .get('/normalThrow')
+      .expect(400, 'Bad Request')
+      .end(() => {
+        setTimeout(() => {
+          expect(scope.pendingMocks().length).to.eq(1);
+          nock.cleanAll();
+          done();
+        }, 300);
       });
   });
   it('should capture body on exception', function(done) {

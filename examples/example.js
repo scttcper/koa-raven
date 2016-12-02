@@ -24,6 +24,11 @@ router.get('/throw', () => {
   throw new Error('Terrible Error');
 });
 
+router.get('/normalThrow', (ctx, next) => {
+  ctx.throw(400, 'You missed something');
+  return next();
+});
+
 router.post('/throwPost', () => {
   throw new Error('Terrible Error');
 });
