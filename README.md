@@ -1,4 +1,3 @@
-#### Note: probably not a necessary package anymore. Can still check it out as an example
 # koa2-raven
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -8,7 +7,7 @@
 [travis-image]: https://travis-ci.org/scttcper/koa2-raven.svg
 [travis-url]: https://travis-ci.org/scttcper/koa2-raven
 
-[raven-node](https://github.com/getsentry/raven-node) middleware for [koa](https://github.com/koajs/koa) v2
+[raven-node](https://github.com/getsentry/raven-node) middleware for [koa](https://github.com/koajs/koa) v2. Records errors that are thrown from your other middleware
 
 
 ### Install
@@ -22,11 +21,12 @@ const Koa = require('koa');
 const Raven = require('raven');
 const koaRaven = require('koa2-raven');
 
+const app = new Koa();
+
 const client = app.context.raven = Raven
   .config('https://public:private@app.getsentry.com/269')
   .install({ unhandledRejection: true });
 
-const app = new Koa();
 koaRaven(app, client);
 
 app.use(() => {
