@@ -14,7 +14,7 @@
 
 
 ### Install
-Install raven ^1 and koa2-raven
+Install raven > ^1.0.0-beta.1 and koa2-raven
 ```npm i raven@next koa2-raven --save```
 
 ### Usage
