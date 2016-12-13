@@ -1,7 +1,7 @@
 {
   "name": "koa2-raven",
   "description": "raven middleware for koa 2",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
