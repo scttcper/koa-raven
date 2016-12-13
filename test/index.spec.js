@@ -36,7 +36,7 @@ describe('koa2-raven', function() {
         if (err) throw new Error(err);
       });
   });
-  it('should not capture 400 bad request', function(done) {
+  it('should not capture 400 bad request ctx.throw', function(done) {
     const scope = nock('https://app.getsentry.com:443')
       .filteringRequestBody(/.*/, '*')
       .post('/api/269/store/', '*')
@@ -44,6 +44,22 @@ describe('koa2-raven', function() {
     request(app.listen())
       .get('/normalThrow')
       .expect(400, 'Bad Request')
+      .end(() => {
+        setTimeout(() => {
+          expect(scope.pendingMocks().length).to.eq(1);
+          nock.cleanAll();
+          done();
+        }, 300);
+      });
+  });
+  it('should not capture 401 unauthorized ctx.assert', function(done) {
+    const scope = nock('https://app.getsentry.com:443')
+      .filteringRequestBody(/.*/, '*')
+      .post('/api/269/store/', '*')
+      .reply(200, 'OK');
+    request(app.listen())
+      .get('/unauthThrow')
+      .expect(401)
       .end(() => {
         setTimeout(() => {
           expect(scope.pendingMocks().length).to.eq(1);

@@ -29,6 +29,11 @@ router.get('/normalThrow', (ctx, next) => {
   return next();
 });
 
+router.get('/unauthThrow', (ctx, next) => {
+  ctx.assert(true === false, 401, 'You are logged out');
+  return next();
+});
+
 router.post('/throwPost', () => {
   throw new Error('Terrible Error');
 });
