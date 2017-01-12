@@ -22,22 +22,22 @@
   },
   "peerDependencies": {
     "koa": "2.0.0-alpha.7",
-    "raven": "^1.0.0"
+    "raven": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.15",
-    "eslint": "^3.12.1",
-    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "koa": "2.0.0-alpha.7",
     "koa-bodyparser": "^3.2.0",
-    "koa-router": "^7.0.1",
+    "koa-router": "^7.1.0",
     "mocha": "^3.2.0",
     "mocha-eslint": "^3.0.1",
     "nock": "^9.0.2",
     "nyc": "^10.0.0",
-    "raven": "^1.0.0",
+    "raven": "^1.1.1",
     "supertest": "^2.0.1"
   },
   "nyc": {
