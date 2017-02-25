@@ -5,13 +5,14 @@ const Raven = require('raven');
 
 const koaRaven = require('../index');
 
-const app = module.exports = new Koa();
+const app = new Koa();
+module.exports = app;
 
 app.use(bodyParser());
 
-const client = app.context.raven = Raven
-  .config('https://public:private@app.getsentry.com/269')
+const client = Raven.config('https://public:private@app.getsentry.com/269')
   .install({ unhandledRejection: true });
+app.context.raven = client;
 
 koaRaven(app, client);
 
