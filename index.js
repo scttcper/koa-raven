@@ -4,7 +4,9 @@ module.exports = function sentry(app, client) {
   app.on('error', (err, ctx) => {
     // set status ourselves? https://github.com/koajs/koa/issues/871
     // ENOENT support
-    if (err.code === 'ENOENT') err.status = 404;
+    if (err.code === 'ENOENT') {
+      err.status = 404;
+    }
     // default to 500
     if (typeof err.status !== 'number' || !statuses[err.status]) {
       err.status = 500;

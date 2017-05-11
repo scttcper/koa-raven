@@ -10,8 +10,9 @@ module.exports = app;
 
 app.use(bodyParser());
 
-const client = Raven.config('https://public:private@app.getsentry.com/269')
-  .install({ unhandledRejection: true });
+const client = Raven
+  .config('https://public:private@app.getsentry.com/269')
+  .install({ captureUnhandledRejections: true });
 app.context.raven = client;
 
 koaRaven(app, client);
