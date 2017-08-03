@@ -87,9 +87,9 @@ describe('koa2-raven', function() {
   });
   it('should send an Error to Sentry server', function(done) {
     const scope = nock('https://public:private@app.getsentry.com')
-        .filteringRequestBody(/.*/, '*')
-        .post('/api/269/store/', '*')
-        .reply(200, 'OK');
+      .filteringRequestBody(/.*/, '*')
+      .post('/api/269/store/', '*')
+      .reply(200, 'OK');
 
     client.once('logged', function() {
       scope.done();
