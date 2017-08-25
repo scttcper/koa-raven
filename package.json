@@ -1,7 +1,7 @@
 {
   "name": "koa2-raven",
   "description": "raven middleware for koa 2",
-  "version": "4.0.12",
+  "version": "4.0.13",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
@@ -13,12 +13,12 @@
   },
   "peerDependencies": {
     "koa": "^2.3.0",
-    "raven": "^2.1.1"
+    "raven": "^2.1.2"
   },
   "devDependencies": {
-    "chai": "^4.1.0",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb-base": "^11.3.1",
+    "chai": "^4.1.1",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
     "eslint-plugin-import": "^2.7.0",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
@@ -27,7 +27,7 @@
     "mocha-eslint": "^4.1.0",
     "nock": "^9.0.14",
     "nyc": "^11.1.0",
-    "raven": "^2.1.1",
+    "raven": "^2.1.2",
     "supertest": "^3.0.0"
   },
   "nyc": {
