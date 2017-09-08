@@ -1,5 +1,5 @@
 const request = require('supertest');
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const nock = require('nock');
 const lint = require('mocha-eslint');
 const zlib = require('zlib');
@@ -102,7 +102,7 @@ describe('koa2-raven', function() {
       .filteringRequestBody(/.*/, '*')
       .post('/api/269/store/', '*')
       .reply(200, function (uri, body) {
-        zlib.inflate(new Buffer(body, 'base64'), (err, dec) => {
+        zlib.inflate(Buffer.from(body, 'base64'), (err, dec) => {
           if (err) return done(err);
           const msg = JSON.parse(dec.toString());
           expect(msg.user).to.have.property('email').and.eq('matt@example.com');
