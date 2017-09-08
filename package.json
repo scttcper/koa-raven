@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha test/*.js",
     "coverage": "nyc npm test",
-    "lint": "eslint index.js test examples; exit 0"
+    "lint": "eslint index.js test examples; exit 0",
+    "lint:fix": "eslint --fix index.js test examples"
   },
   "dependencies": {
     "statuses": "^1.3.1"
@@ -18,7 +19,7 @@
   "devDependencies": {
     "chai": "^4.1.1",
     "eslint": "^4.5.0",
-    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
