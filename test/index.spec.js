@@ -12,7 +12,7 @@ lint(['index.js', 'test', 'examples'], { timeout: 10000 });
 
 describe('koa2-raven', function() {
   it('should respond 200', function(done) {
-    request(app.listen())
+    request(app.callback())
       .get('/')
       .expect(200, 'ok')
       .end((err) => {
@@ -29,7 +29,7 @@ describe('koa2-raven', function() {
       scope.done();
       done();
     });
-    request(app.listen())
+    request(app.callback())
       .get('/throw')
       .expect(500, 'Internal Server Error')
       .end((err) => {
@@ -41,7 +41,7 @@ describe('koa2-raven', function() {
       .filteringRequestBody(/.*/, '*')
       .post('/api/269/store/', '*')
       .reply(200, 'OK');
-    request(app.listen())
+    request(app.callback())
       .get('/normalThrow')
       .expect(400, 'Bad Request')
       .end(() => {
@@ -57,7 +57,7 @@ describe('koa2-raven', function() {
       .filteringRequestBody(/.*/, '*')
       .post('/api/269/store/', '*')
       .reply(200, 'OK');
-    request(app.listen())
+    request(app.callback())
       .get('/unauthThrow')
       .expect(401)
       .end(() => {
@@ -77,7 +77,7 @@ describe('koa2-raven', function() {
       scope.done();
       done();
     });
-    request(app.listen())
+    request(app.callback())
       .post('/throwPost')
       .send({ value: 1 })
       .expect(500, 'Internal Server Error')
@@ -123,7 +123,7 @@ describe('koa2-raven', function() {
     client.once('logged', function () {
       scope.done();
     });
-    request(app.listen())
+    request(app.callback())
       .get('/throwUser')
       .expect(500, 'Internal Server Error')
       .end((err) => {
