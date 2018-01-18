@@ -1,34 +1,37 @@
 {
   "name": "koa2-raven",
   "description": "raven middleware for koa 2",
-  "version": "4.0.14",
+  "version": "4.0.15",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
     "coverage": "nyc npm test",
-    "lint": "eslint index.js test examples; exit 0",
+    "lint": "eslint index.js test examples",
     "lint:fix": "eslint --fix index.js test examples"
   },
   "dependencies": {
-    "statuses": "^1.3.1"
+    "statuses": "^1.4.0"
   },
   "peerDependencies": {
-    "koa": "^2.3.0",
-    "raven": "^2.2.1"
+    "koa": "^2.4.1",
+    "raven": "^2.3.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.8.0",
-    "eslint-config-airbnb-base": "^12.0.1",
-    "eslint-plugin-import": "^2.7.0",
-    "koa": "^2.3.0",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.2.1",
-    "mocha": "^4.0.0",
+    "koa-router": "^7.3.0",
+    "mocha": "^5.0.0",
     "mocha-eslint": "^4.1.0",
-    "nock": "^9.0.22",
-    "nyc": "^11.2.1",
-    "raven": "^2.2.1",
+    "nock": "^9.1.6",
+    "nyc": "^11.4.1",
+    "raven": "^2.3.0",
     "supertest": "^3.0.0"
   },
   "nyc": {
