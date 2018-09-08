@@ -1,14 +1,11 @@
 const request = require('supertest');
 const { expect } = require('chai');
 const nock = require('nock');
-const lint = require('mocha-eslint');
 const zlib = require('zlib');
 
 const app = require('../examples/example');
 
 const client = app.context.raven;
-
-lint(['index.js', 'test', 'examples'], { timeout: 10000 });
 
 describe('koa2-raven', function() {
   it('should respond 200', function(done) {
